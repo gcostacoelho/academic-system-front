@@ -1,6 +1,18 @@
+import { useState, useEffect } from "react";
 import { TabelaDisc } from "./Forms/TabelaDisc";
+import axios from "axios";
 
 export function FormInscricao() {
+    const [disciplinas, setDisciplinas] = useState([]);
+
+    useEffect(() => {
+        axios('https://api.kanye.rest/').then(resp => {
+            console.log(resp.data);
+            setDisciplinas(resp.data)
+        })
+
+    }, []);
+
 
     function handlePostApi(event) {
         event.preventDefault();
@@ -12,13 +24,31 @@ export function FormInscricao() {
         <form onSubmit={handlePostApi} className="m-7 h-screen overflow-auto">
 
             <div className="flex flex-col justify-center items-center">
+                {/* {
+                    disciplinas.map(disciplina => {
+                        return (
+                        <TabelaDisc
+                                sigla="{disciplina.sigla}"
+                                disc="{disciplina.disc}"
+                                turno="{disciplina.turno}"
+                                horario="{disciplina.horario}"
+                                local="{disciplina.local}"
+                                prof="{disciplina.prof}"
+                            />
+                        );
+                    })
+                }
+                {
+                    disciplinas.length == 0 && <h3>{disciplinas}</h3>
+                } */}
+
                 <TabelaDisc
-                    sigla="QSW1"
-                    disc="Qualidade de software"
-                    turno="Noturno"
-                    horario="19:00-22:35"
-                    local="A405"
-                    prof="Wendramel"
+                    sigla="{disciplina.sigla}"
+                    disc="{disciplina.disc}"
+                    turno="{disciplina.turno}"
+                    horario="{disciplina.horario}"
+                    local="{disciplina.local}"
+                    prof="{disciplina.prof}"
                 />
 
                 <div className="flex gap-10 my-4">
