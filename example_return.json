@@ -1,8 +1,12 @@
 {
-    "sigla": "QST",
-    "disc": "Qualidade",
-    "turno": "noturno",
-    "horario": "Teste",
-    "local": "Teste-hora",
-    "prof": "Irineu"
+    "disc": [
+        {
+            "sigla": "QST",
+            "disc": "Qualidade",
+            "turno": "noturno",
+            "horario": "Teste",
+            "local": "Teste-hora",
+            "prof": "Irineu"
+        }
+    ]
 }

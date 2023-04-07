@@ -33,7 +33,7 @@ function App() {
             </div>
 
             <div className='container h-screen overflow-hidden'>
-                {state == 'start'}
+                {state == 'start' && <h3>Home</h3>}
                 {state == 'register' && <FormInscricao />}
                 {state == 'teste2'}
                 {state == 'teste3'}
