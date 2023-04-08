@@ -1,4 +1,3 @@
-// Products.js
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,25 +14,20 @@ export default function Login() {
 
     function handleAuthApi(event) {
         event.preventDefault();
-        
+
         if (inputs.username == 'coord') {
             navigate('coord')
-        } 
+        }
         else if (inputs.username == 'aluno') {
             navigate('aluno')
-        } 
+        }
         else if (inputs.username == 'prof') {
             navigate('prof')
         }
     }
 
-
     return (
         <div className="flex justify-center items-center w-screen h-screen bg-gray-950">
-            {/* <button className="bg-red-500" onClick={() => navigate('aluno')}>
-                Tela Aluno
-            </button>*/}
-
             <form onSubmit={handleAuthApi}>
                 <div className='w-96 h-96 flex flex-col justify-center p-4 rounded-lg bg-gray-800'>
                     <label className="text-white">Usuário:</label>
@@ -62,10 +56,7 @@ export default function Login() {
                     </div>
 
                 </div>
-
             </form>
-
-
         </div>
     );
 };

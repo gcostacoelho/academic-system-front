@@ -4,35 +4,50 @@ import axios from "axios";
 
 export function FormInscricao() {
     const [disciplinas, setDisciplinas] = useState([]);
+    const [data, setData] = useState();
+
+    const childToParent = (childData) => {
+        setData(childData.target.value);
+    }
 
     useEffect(() => {
         /*Api aleatória que retorna um array de frases */
         axios('https://api.breakingbadquotes.xyz/v1/quotes/0').then(resp => {
-            setDisciplinas(resp.data)
+            setDisciplinas(resp.data);
         })
     }, [])
 
     function handlePostApi(event) {
         event.preventDefault();
 
-        alert('cadastro')
+        alert(data);
+        setData();
     }
 
     return (
         <form onSubmit={handlePostApi} className="m-7 h-screen overflow-auto">
-
             <div>
                 {
                     disciplinas.length > 0 && disciplinas.map((disciplina) => {
                         return (
                             <div className="flex flex-col justify-center items-center">
                                 <TabelaDisc
-                                    sigla={disciplina.sigla}
+                                    sigla="{disciplina.sigla}"
                                     disc={disciplina.disc}
                                     turno={disciplina.turno}
                                     horario={disciplina.horario}
                                     local={disciplina.local}
                                     prof={disciplina.prof}
+                                    childToParent={childToParent}
+                                />
+                                <TabelaDisc
+                                    sigla="{disciplina.sigla1}"
+                                    disc={disciplina.disc}
+                                    turno={disciplina.turno}
+                                    horario={disciplina.horario}
+                                    local={disciplina.local}
+                                    prof={disciplina.prof}
+                                    childToParent={childToParent}
                                 />
 
                                 <div className="flex gap-10 my-4">
@@ -40,7 +55,7 @@ export function FormInscricao() {
                                     <button className="bg-blue-500 p-1 rounded" type="reset">Limpar disciplinas</button>
                                 </div>
                             </div>
-                        )
+                        );
                     })
                 }
 
