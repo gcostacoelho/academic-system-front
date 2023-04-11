@@ -1,28 +1,23 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { TabelaDisc } from "../Forms/TabelaDisc";
-import axios from "axios";
 
-export function FormInscricao() {
+export function FormCancelaInsc() {
     const [disciplinas, setDisciplinas] = useState([]);
-    const [data, setData] = useState();
-
-    const childToParent = (childData) => {
-        setData(childData.target.value);
-    }
 
     useEffect(() => {
-        /*Api aleatória que retorna um array de frases */
         axios('https://api.breakingbadquotes.xyz/v1/quotes/0').then(resp => {
-            setDisciplinas(resp.data);
-        })
-    }, [])
+            setDisciplinas(resp.data)
+        });
+    }, []);
+
 
     function handlePostApi(event) {
         event.preventDefault();
 
-        alert(data);
-        setData();
+        alert("Vazio");
     }
+
 
     return (
         <form onSubmit={handlePostApi} className="m-7 h-screen overflow-auto">
@@ -38,20 +33,10 @@ export function FormInscricao() {
                                     horario={disciplina.horario}
                                     local={disciplina.local}
                                     prof={disciplina.prof}
-                                    childToParent={childToParent}
-                                />
-                                <TabelaDisc
-                                    sigla="{disciplina.sigla1}"
-                                    disc={disciplina.disc}
-                                    turno={disciplina.turno}
-                                    horario={disciplina.horario}
-                                    local={disciplina.local}
-                                    prof={disciplina.prof}
-                                    childToParent={childToParent}
                                 />
                                 <div className="flex gap-10 my-4">
-                                    <button className="bg-blue-500 p-1 rounded" type="submit">Inscrever</button>
-                                    <button className="bg-blue-500 p-1 rounded" type="reset">Limpar disciplinas</button>
+                                    <button className="bg-blue-500 p-1 rounded" type="submit">Cancelar disciplinas</button>
+                                    <button className="bg-blue-500 p-1 rounded" type="reset">Limpar</button>
                                 </div>
                             </div>
                         );
@@ -60,7 +45,8 @@ export function FormInscricao() {
 
                 {
                     /*Essa condição é especifica por conta da API que está sendo utilizada, dps irá mudar para quando o length for = 0*/
-                    disciplinas[0] == "0" && <h3 className="flex justify-center">Não há matérias para ofertar</h3>
+                    disciplinas[0] == "0" && 
+                        <h3 className="flex justify-center">Você não possui matérias na qual possa cancelar</h3>
                 }
             </div>
         </form>
