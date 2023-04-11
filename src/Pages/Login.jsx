@@ -21,9 +21,6 @@ export default function Login() {
         else if (inputs.username == 'aluno') {
             navigate('aluno')
         }
-        else if (inputs.username == 'prof') {
-            navigate('prof')
-        }
     }
 
     return (
