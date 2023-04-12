@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import HomeAluno from './Pages/HomeAluno';
 import HomeCoord from './Pages/HomeCoord';
-import HomeProf from './Pages/HomeProf';
 
 import './styles/main.css';
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FormInscricao } from "../components/Aluno/FormInscricao";
 import { FormCancelaInsc } from "../components/Aluno/FormCancelaInsc";
+import { MenuAluno } from "../components/Aluno/MenuAluno";
 
 export default function HomeAluno() {
     const [state, setState] = useState('start');
@@ -11,7 +12,7 @@ export default function HomeAluno() {
                 <h3 className="text-white text-center">
                     <b>Sistema de Controle Acadêmico</b>
                 </h3>
-                
+
                 <button
                     onClick={() => setState('start')}
                     className="bg-slate-500 rounded p-1 text-white hover:bg-slate-700">Home
@@ -29,7 +30,7 @@ export default function HomeAluno() {
             </div>
 
             <div className='container h-screen overflow-hidden'>
-                {state == 'start' && <h3>Home</h3>}
+                {state == 'start' && <MenuAluno />}
                 {state == 'register' && <FormInscricao />}
                 {state == 'cancela_inscricao' && <FormCancelaInsc />}
             </div>
