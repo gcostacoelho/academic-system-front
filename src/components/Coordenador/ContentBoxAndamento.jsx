@@ -42,17 +42,20 @@ export function ContentBoxAndamento(props) {
 
                 <tbody>
                     {
-                        alunosInsc > 0 && alunosInsc.map((aluno) => {
+                        alunosInsc.length >= 0 && alunosInsc.map((aluno) => {
                             return (
                                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                     <td scope="row" className="px-6 py-4">
-                                        {aluno.dataInsc}
+                                        {/* {aluno.dataInsc} */}
+                                        16/05/2023
                                     </td>
                                     <td scope="row" className="px-6 py-4">
-                                        {aluno.nomeAluno}
+                                        {/* {aluno.nomeAluno} */}
+                                        Gustavo Costa Coelho
                                     </td>
                                     <td scope="row" className="px-6 py-4">
-                                        {aluno.matricula}
+                                        {/* {aluno.matricula} */}
+                                        BP3018318
                                     </td>
                                 </tr>
                             );
