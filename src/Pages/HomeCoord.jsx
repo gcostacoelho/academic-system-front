@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { AndamentoInsc } from "../components/Coordenador/AndamentoInsc";
+import { VisualizaAlunoGeral } from "../components/Coordenador/VisualizaAlunosGeral";
 
 export default function HomeCoord() {
     const [state, setState] = useState('home')
-
 
     return (
         <div className="flex">
@@ -42,8 +42,8 @@ export default function HomeCoord() {
                 {state == 'home' && <h3>Home</h3>}
                 {state == 'andamento_inscricao' && <AndamentoInsc />}
                 {state == 'atender_lista' && <h3>atender_lista</h3>}
-                {state == 'disciplinas' && <h3>disciplinas</h3>}
-                {state == 'alunos_cadastrados' && <h3>alunos_cadastrados</h3>}
+                {state == 'disciplinas' && <h3>Teste</h3>}
+                {state == 'alunos_cadastrados' && <VisualizaAlunoGeral />}
             </div>
 
         </div>
