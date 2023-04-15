@@ -30,7 +30,7 @@ export function FormInscricao() {
                 {
                     disciplinas.length > 0 && disciplinas.map((disciplina) => {
                         return (
-                            <div className="flex flex-col justify-center items-center">
+                            <div>
                                 <TabelaDisc
                                     sigla={disciplina.sigla}
                                     disc={disciplina.disc}
@@ -49,7 +49,7 @@ export function FormInscricao() {
                                     prof={disciplina.prof}
                                     childToParent={childToParent}
                                 />
-                                <div className="flex gap-10 my-4">
+                                <div className="flex flex-row justify-center items-center gap-10 my-4">
                                     <button className="bg-blue-500 p-1 rounded" type="submit">Inscrever</button>
                                     <button className="bg-blue-500 p-1 rounded" type="reset">Limpar disciplinas</button>
                                 </div>
