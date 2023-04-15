@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { TabelaDisc } from "../Forms/TabelaDisc";
+import { TabelaDisc } from "./TabelaDisc";
 import axios from "axios";
 
 export function FormInscricao() {

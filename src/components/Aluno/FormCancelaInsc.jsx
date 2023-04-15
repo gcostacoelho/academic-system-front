@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { TabelaDisc } from "../Forms/TabelaDisc";
+import { TabelaDisc } from "./TabelaDisc";
 
 export function FormCancelaInsc() {
     const [disciplinas, setDisciplinas] = useState([]);
