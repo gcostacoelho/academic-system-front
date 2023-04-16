@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { AndamentoInsc } from "../components/Coordenador/AndamentoInsc";
+import { AndamentoInsc } from "../components/Coordenador/Insc/AndamentoInsc";
 import { VisualizaAlunoGeral } from "../components/Coordenador/VisualizaAlunosGeral";
+import { VisualizaDiscGeral } from "../components/Coordenador/VisualizaDiscGeral";
 
 export default function HomeCoord() {
     const [state, setState] = useState('home')
@@ -42,7 +43,7 @@ export default function HomeCoord() {
                 {state == 'home' && <h3>Home</h3>}
                 {state == 'andamento_inscricao' && <AndamentoInsc />}
                 {state == 'atender_lista' && <h3>atender_lista</h3>}
-                {state == 'disciplinas' && <h3>Teste</h3>}
+                {state == 'disciplinas' && <VisualizaDiscGeral />}
                 {state == 'alunos_cadastrados' && <VisualizaAlunoGeral />}
             </div>
 

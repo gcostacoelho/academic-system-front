@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { DialogBox } from "../DialogBox";
+import { DialogBox } from "../../DialogBox";
 import { Eye } from "phosphor-react";
 import { ContentBoxAndamento } from "./ContentBoxAndamento";
 
@@ -16,6 +16,8 @@ export function AndamentoInsc() {
 
     return (
         <div className="relative overflow-x-auto flex flex-col justify-center items-center">
+            <h1 className="m-5 font-bold text-2xl">Andamento de inscrições</h1>
+
             <table className="w-4/5 text-sm text-left text-gray-500 dark:text-gray-400 m-4">
 
                 <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">

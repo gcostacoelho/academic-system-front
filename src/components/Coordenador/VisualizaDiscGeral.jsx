@@ -1,12 +1,12 @@
 import { Eye, Pen, Trash } from "phosphor-react";
 import { DialogBox } from "../DialogBox";
-import { FormAluno } from "../Forms/FormAluno";
 import { ConfirmaExclusao } from "../ConfirmaExclusao";
+import { FormDisc } from "../Forms/FormDisc";
 
-export function VisualizaAlunoGeral() {
+export function VisualizaDiscGeral() {
     return (
         <div className="relative overflow-x-auto flex flex-col justify-center items-center">
-            <h1 className="m-5 font-bold text-2xl">Alunos</h1>
+            <h1 className="m-5 font-bold text-2xl">Disciplinas</h1>
 
             <table className="w-4/5 text-sm text-left text-gray-500 dark:text-gray-400 m-4">
 
@@ -16,7 +16,7 @@ export function VisualizaAlunoGeral() {
                             Ações
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Matricula
+                            Código
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Nome
@@ -36,7 +36,7 @@ export function VisualizaAlunoGeral() {
                                         <Eye size={24} color="black" />
                                     }
                                     content={
-                                        <FormAluno
+                                        <FormDisc
                                             edit={true}
                                         />
                                     }
@@ -46,7 +46,7 @@ export function VisualizaAlunoGeral() {
                                         <Pen size={24} color="black" />
                                     }
                                     content={
-                                        <FormAluno
+                                        <FormDisc
                                             edit={false}
                                         />
                                     }
@@ -59,10 +59,10 @@ export function VisualizaAlunoGeral() {
                             </div>
                         </td>
                         <td scope="row" className="px-6 py-4">
-                            BP3018318
+                            QSW
                         </td>
                         <td scope="row" className="px-6 py-4">
-                            Gustavo Costa Coelho
+                            Qualidade de Software
                         </td>
                         <td scope="row" className="px-6 py-4">
                             ADS
