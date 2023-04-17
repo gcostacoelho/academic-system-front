@@ -15,7 +15,7 @@ export function FormDisc(props) {
                     className="p-1 rounded"
                     type="text"
                     disabled={props.edit}
-                    defaultValue="QSW"
+                    defaultValue={props.sigla || ""}
                 />
 
                 <br />
@@ -26,7 +26,7 @@ export function FormDisc(props) {
                     className="p-1 rounded"
                     type="text"
                     disabled={props.edit}
-                    defaultValue="Qualidade de Software"
+                    defaultValue={props.nomeDisc || ""}
                 />
 
                 <br />
@@ -37,7 +37,7 @@ export function FormDisc(props) {
                     className="p-1 rounded"
                     type="number"
                     disabled={props.edit}
-                    defaultValue="5"
+                    defaultValue={props.creditos || ""}
                 />
 
                 <br />
@@ -48,7 +48,7 @@ export function FormDisc(props) {
                     className="p-1 rounded"
                     type="text"
                     disabled={props.edit}
-                    defaultValue="ADS"
+                    defaultValue={props.curso || ""}
                 />
 
                 <br />

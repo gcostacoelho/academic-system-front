@@ -12,8 +12,8 @@ export function FormAluno(props) {
                 <input
                     className="p-1 rounded"
                     type="text"
-                    disabled={props.edit}
-                    defaultValue="Gustavo"
+                    disabled={props.edit || false}
+                    defaultValue={props.nomeAluno || ""}
                 />
 
                 <br />
@@ -23,8 +23,8 @@ export function FormAluno(props) {
                 <input
                     className="p-1 rounded"
                     type="text"
-                    disabled={props.edit}
-                    defaultValue="BP3018318"
+                    disabled={props.edit || false}
+                    defaultValue={props.matricula || ""}
                 />
 
                 <br />
@@ -34,8 +34,8 @@ export function FormAluno(props) {
                 <input
                     className="p-1 rounded"
                     type="text"
-                    disabled={props.edit}
-                    defaultValue="ADS"
+                    disabled={props.edit || false}
+                    defaultValue={props.curso || ""}
                 />
 
                 <br />
@@ -45,8 +45,8 @@ export function FormAluno(props) {
                 <input
                     className="p-1 rounded"
                     type="text"
-                    disabled={props.edit}
-                    defaultValue="5º"
+                    disabled={props.edit || false}
+                    defaultValue={props.periodo || ""}
                 />
 
                 <br />
@@ -56,8 +56,8 @@ export function FormAluno(props) {
                 <input
                     className="p-1 rounded"
                     type="text"
-                    disabled={props.edit}
-                    defaultValue="11111111111"
+                    disabled={props.edit || false}
+                    defaultValue={props.ident || ""}
                 />
 
                 <br />
@@ -67,8 +67,8 @@ export function FormAluno(props) {
                 <input
                     className="p-1 rounded"
                     type="date"
-                    disabled={props.edit}
-                    defaultValue="2003-05-16"
+                    disabled={props.edit || false}
+                    defaultValue={props.dataNascimento || ""}
                 />
             </div>
 
