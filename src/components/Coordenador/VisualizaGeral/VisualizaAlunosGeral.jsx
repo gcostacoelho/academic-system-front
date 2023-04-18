@@ -1,7 +1,7 @@
 import { Eye, Pen, Trash } from "phosphor-react";
-import { DialogBox } from "../DialogBox";
-import { FormAluno } from "../Forms/FormAluno";
-import { ConfirmaExclusao } from "../ConfirmaExclusao";
+import { DialogBox } from "../../DialogBox";
+import { FormAluno } from "../../Forms/FormAluno";
+import { ConfirmaExclusao } from "../../ConfirmaExclusao";
 
 export function VisualizaAlunoGeral() {
     return (

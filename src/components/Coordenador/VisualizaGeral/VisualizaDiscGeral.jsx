@@ -1,7 +1,7 @@
 import { Eye, Pen, Trash } from "phosphor-react";
-import { DialogBox } from "../DialogBox";
-import { ConfirmaExclusao } from "../ConfirmaExclusao";
-import { FormDisc } from "../Forms/FormDisc";
+import { DialogBox } from "../../DialogBox";
+import { ConfirmaExclusao } from "../../ConfirmaExclusao";
+import { FormDisc } from "../../Forms/FormDisc";
 
 export function VisualizaDiscGeral() {
     return (

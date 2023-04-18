@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { AndamentoInsc } from "../components/Coordenador/Insc/AndamentoInsc";
-import { VisualizaAlunoGeral } from "../components/Coordenador/VisualizaAlunosGeral";
-import { VisualizaDiscGeral } from "../components/Coordenador/VisualizaDiscGeral";
+import { VisualizaAlunoGeral } from "../components/Coordenador/VisualizaGeral/VisualizaAlunosGeral";
+import { VisualizaDiscGeral } from "../components/Coordenador/VisualizaGeral/VisualizaDiscGeral";
+import { AtenderLista } from "../components/Coordenador/AtenderLista";
 
 export default function HomeCoord() {
     const [state, setState] = useState('home')
@@ -42,7 +43,7 @@ export default function HomeCoord() {
             <div className='container h-screen overflow-hidden'>
                 {state == 'home' && <h3>Home</h3>}
                 {state == 'andamento_inscricao' && <AndamentoInsc />}
-                {state == 'atender_lista' && <h3>atender_lista</h3>}
+                {state == 'atender_lista' && <AtenderLista />}
                 {state == 'disciplinas' && <VisualizaDiscGeral />}
                 {state == 'alunos_cadastrados' && <VisualizaAlunoGeral />}
             </div>

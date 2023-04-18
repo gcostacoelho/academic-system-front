@@ -11,7 +11,7 @@ export function DialogBox(props) {
             <Dialog.Portal>
                 <Dialog.Overlay />
 
-                <Dialog.Content className='fixed bg-[#6b6b6b] py-8 px-10 text-black top-1/2 left-[800px] -translate-x-1/2 -translate-y-1/2 rounded-lg w-[700px] shadow-lg shadow-black/25'>
+                <Dialog.Content className='fixed bg-[#6b6b6b] py-8 px-10 text-black top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[700px] shadow-lg shadow-black/25'>
                     <Dialog.Title />
                     {props.content}
                 </Dialog.Content>
