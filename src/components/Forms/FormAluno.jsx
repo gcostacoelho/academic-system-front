@@ -66,7 +66,8 @@ export function FormAluno(props) {
                 <label>Data de nascimento: </label>
                 <input
                     className="p-1 rounded"
-z                    disabled={props.edit || false}
+                    type="date"
+                    disabled={props.edit || false}
                     defaultValue={props.dataNascimento || ""}
                 />
             </div>
