@@ -64,7 +64,7 @@ export function FormDisc(props) {
             {
                 props.edit == false &&
                 <div className="float-right">
-                    <button className="bg-blue-500 p-1 rounded" type="submit">Atualizar</button>
+                    <button className="bg-blue-500 p-1 rounded" type="submit">{props.nameButton}</button>
                 </div>
             }
 

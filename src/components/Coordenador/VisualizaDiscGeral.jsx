@@ -13,7 +13,10 @@ export function VisualizaDiscGeral() {
                         <button className="p-1 bg-blue-500 rounded">Nova Disciplina</button>
                     }
                     content={
-                        <FormDisc />
+                        <FormDisc 
+                            edit={false}
+                            nameButton="Criar"
+                        />
                     }
                 />
             </div>
@@ -58,6 +61,7 @@ export function VisualizaDiscGeral() {
                                         content={
                                             <FormDisc
                                                 edit={false}
+                                                nameButton="Atualizar"
                                             />
                                         }
                                     />

@@ -13,7 +13,10 @@ export function VisualizaAlunoGeral() {
                         <button className="p-1 bg-blue-500 rounded">Novo aluno</button>
                     }
                     content={
-                        <FormAluno />
+                        <FormAluno
+                            edit={false}
+                            nameButton="Criar" 
+                        />
                     }
                 />
             </div>
@@ -58,6 +61,7 @@ export function VisualizaAlunoGeral() {
                                         content={
                                             <FormAluno
                                                 edit={false}
+                                                nameButton="Atualizar"
                                             />
                                         }
                                     />
