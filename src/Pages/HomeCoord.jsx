@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AndamentoInsc } from "../components/Coordenador/Insc/AndamentoInsc";
 import { VisualizaAlunoGeral } from "../components/Coordenador/VisualizaGeral/VisualizaAlunosGeral";
 import { VisualizaDiscGeral } from "../components/Coordenador/VisualizaGeral/VisualizaDiscGeral";
-import { AtenderLista } from "../components/Coordenador/AtenderLista";
+import { AtenderLista } from "../components/Coordenador/ListaEspera/AtenderLista";
 
 export default function HomeCoord() {
     const [state, setState] = useState('home')
