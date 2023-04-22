@@ -32,9 +32,8 @@ export function ContentBoxListaEspera(props) {
                 <div className="flex flex-col gap-2">
                     <label>Qual o dia da turma?</label>
 
-                    <ToggleGroup.Root type="multiple" value={weekDays} className="flex flex-row gap-2" onValueChange={setWeekDays}>
+                    <ToggleGroup.Root type='single' value={weekDays} className="flex flex-row gap-2" onValueChange={setWeekDays}>
                         <ToggleGroup.Item
-                            disabled={weekDays.length == 0 || weekDays.includes('1') ? false : true}
                             value="1"
                             title="Segunda"
                             className={`w-8 h-8 rounded ${weekDays.includes('1') ? 'bg-violet-500' : 'bg-zinc-900'}`}
@@ -42,7 +41,6 @@ export function ContentBoxListaEspera(props) {
                             S
                         </ToggleGroup.Item>
                         <ToggleGroup.Item
-                            disabled={weekDays.length == 0 || weekDays.includes('2') ? false : true}
                             value="2"
                             title="Terça"
                             className={`w-8 h-8 rounded ${weekDays.includes('2') ? 'bg-violet-500' : 'bg-zinc-900'}`}
@@ -50,7 +48,6 @@ export function ContentBoxListaEspera(props) {
                             T
                         </ToggleGroup.Item>
                         <ToggleGroup.Item
-                            disabled={weekDays.length == 0 || weekDays.includes('3') ? false : true}
                             value="3"
                             title="Quarta"
                             className={`w-8 h-8 rounded ${weekDays.includes('3') ? 'bg-violet-500' : 'bg-zinc-900'}`}
@@ -58,7 +55,6 @@ export function ContentBoxListaEspera(props) {
                             Q
                         </ToggleGroup.Item>
                         <ToggleGroup.Item
-                            disabled={weekDays.length == 0 || weekDays.includes('4') ? false : true}
                             value="4"
                             title="Quinta"
                             className={`w-8 h-8 rounded ${weekDays.includes('4') ? 'bg-violet-500' : 'bg-zinc-900'}`}
@@ -66,7 +62,6 @@ export function ContentBoxListaEspera(props) {
                             Q
                         </ToggleGroup.Item>
                         <ToggleGroup.Item
-                            disabled={weekDays.length == 0 || weekDays.includes('5') ? false : true}
                             value="5"
                             title="Sexta"
                             className={`w-8 h-8 rounded  ${weekDays.includes('5') ? 'bg-violet-500' : 'bg-zinc-900'}`}
