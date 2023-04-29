@@ -3,10 +3,10 @@ export function TabelaDisc(props) {
         <div className="relative overflow-x-auto flex flex-col justify-center items-center">
             <table className="w-4/5 text-sm text-left text-gray-500 dark:text-gray-400 m-4">
 
-                <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+                <thead className="text-xs text-[#ffffff] uppercase bg-colorHeadTable dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" className="px-6 py-3">
-                            -
+                            
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Sigla
@@ -30,7 +30,7 @@ export function TabelaDisc(props) {
                 </thead>
 
                 <tbody>
-                    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr className="bg-colorBodyTable border-b dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row" className="px-6 py-4 flex justify-center items-baseline">
                             <input
                                 type="radio"

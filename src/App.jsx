@@ -6,6 +6,7 @@ import HomeCoord from './Pages/HomeCoord';
 
 import './styles/main.css';
 
+
 function App() {
     return (
         <>

@@ -10,11 +10,10 @@ export function MenuAluno() {
         })
     })
 
-
     return (
-        <div className="p-2">
+        <div className="p-5">
 
-            <div className="bg-slate-500 rounded p-5">
+            <div className="bg-colorModal rounded p-5">
                 <div>
                     <img
                         className="w-36 h-36 rounded-3xl mb-4"
@@ -22,7 +21,7 @@ export function MenuAluno() {
                         alt="your-photo"
                     />
 
-                    <div className="bg-slate-800 rounded p-5 text-white">
+                    <div className="bg- rounded p-5 text-white">
                         <label>Nome: {dataAluno.nome}</label>
                         <br />
                         <label>Data de nascimento: {dataAluno.nascimento}</label>

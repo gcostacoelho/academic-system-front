@@ -35,8 +35,8 @@ export function FormCancelaInsc() {
                                     prof={disciplina.prof}
                                 />
                                 <div className="flex flex-row justify-center items-center gap-10 my-4">
-                                    <button className="bg-blue-500 p-1 rounded" type="submit">Cancelar disciplinas</button>
-                                    <button className="bg-blue-500 p-1 rounded" type="reset">Limpar</button>
+                                    <button className="bg-colorBtnDanger p-2 rounded text-[#ffffff] font-medium" type="submit">Cancelar disciplinas</button>
+                                    <button className="bg-colorBtnAlert p-2 rounded text-[#ffffff] font-medium" type="reset">Limpar</button>
                                 </div>
                             </div>
                         );
@@ -46,7 +46,7 @@ export function FormCancelaInsc() {
                 {
                     /*Essa condição é especifica por conta da API que está sendo utilizada, dps irá mudar para quando o length for = 0*/
                     disciplinas[0] == "0" && 
-                        <h3 className="flex justify-center">Você não possui matérias na qual possa cancelar</h3>
+                        <h3 className="flex justify-center font-semibold">Você não possui matérias na qual possa cancelar</h3>
                 }
             </div>
         </form>

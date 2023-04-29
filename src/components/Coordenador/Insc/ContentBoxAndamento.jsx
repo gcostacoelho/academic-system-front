@@ -26,7 +26,7 @@ export function ContentBoxAndamento(props) {
         <div>
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 
-                <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+                <thead className="text-xs text-[#ffffff] uppercase bg-colorHeadTable dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             Data de inscrição
@@ -40,7 +40,7 @@ export function ContentBoxAndamento(props) {
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody className="bg-colorBodyTable">
                     {
                         alunosInsc.length >= 0 && alunosInsc.map((aluno) => {
                             return (

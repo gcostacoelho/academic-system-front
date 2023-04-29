@@ -10,7 +10,7 @@ export function FormAluno(props) {
             <div>
                 <label>Nome completo: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="text"
                     disabled={props.edit || false}
                     defaultValue={props.nomeAluno || ""}
@@ -21,7 +21,7 @@ export function FormAluno(props) {
 
                 <label>Matricula: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="text"
                     disabled={props.edit || false}
                     defaultValue={props.matricula || ""}
@@ -32,7 +32,7 @@ export function FormAluno(props) {
 
                 <label>Curso: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="text"
                     disabled={props.edit || false}
                     defaultValue={props.curso || ""}
@@ -43,7 +43,7 @@ export function FormAluno(props) {
 
                 <label>Período: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="text"
                     disabled={props.edit || false}
                     defaultValue={props.periodo || ""}
@@ -54,7 +54,7 @@ export function FormAluno(props) {
 
                 <label>Identidade: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="text"
                     disabled={props.edit || false}
                     defaultValue={props.ident || ""}
@@ -65,7 +65,7 @@ export function FormAluno(props) {
 
                 <label>Data de nascimento: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="date"
                     disabled={props.edit || false}
                     defaultValue={props.dataNascimento || ""}
@@ -75,7 +75,7 @@ export function FormAluno(props) {
             {
                 props.edit == false &&
                 <div className="float-right">
-                    <button className="bg-blue-500 p-1 rounded" type="submit">{props.nameButton}</button>
+                    <button className="bg-colorBtnSuccess p-2 rounded text-[#ffffff] font-medium" type="submit">{props.nameButton}</button>
                 </div>
             }
 

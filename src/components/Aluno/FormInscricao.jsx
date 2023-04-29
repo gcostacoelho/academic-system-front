@@ -50,8 +50,8 @@ export function FormInscricao() {
                                     childToParent={childToParent}
                                 />
                                 <div className="flex flex-row justify-center items-center gap-10 my-4">
-                                    <button className="bg-blue-500 p-1 rounded" type="submit">Inscrever</button>
-                                    <button className="bg-blue-500 p-1 rounded" type="reset">Limpar disciplinas</button>
+                                    <button className="bg-colorBtnSuccess font-medium p-2 rounded text-[#ffffff]" type="submit">Inscrever</button>
+                                    <button className="bg-colorBtnAlert font-medium p-2 rounded text-[#ffffff]" type="reset">Limpar disciplinas</button>
                                 </div>
                             </div>
                         );
@@ -60,7 +60,7 @@ export function FormInscricao() {
 
                 {
                     /*Essa condição é especifica por conta da API que está sendo utilizada, dps irá mudar para quando o length for = 0*/
-                    disciplinas[0] == "0" && <h3 className="flex justify-center">Não há matérias para ofertar</h3>
+                    disciplinas[0] == "0" && <h3 className="flex justify-center font-semibold">Não há matérias para ofertar</h3>
                 }
             </div>
         </form>

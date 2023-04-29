@@ -12,7 +12,7 @@ export function FormDisc(props) {
             <div>
                 <label>Código: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="text"
                     disabled={props.edit}
                     defaultValue={props.sigla || ""}
@@ -23,7 +23,7 @@ export function FormDisc(props) {
 
                 <label>Nome: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="text"
                     disabled={props.edit}
                     defaultValue={props.nomeDisc || ""}
@@ -34,7 +34,7 @@ export function FormDisc(props) {
 
                 <label>Qtd. de Créditos: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="number"
                     disabled={props.edit}
                     defaultValue={props.creditos || ""}
@@ -45,7 +45,7 @@ export function FormDisc(props) {
 
                 <label>Curso: </label>
                 <input
-                    className="p-1 rounded"
+                    className="p-1 rounded border-2"
                     type="text"
                     disabled={props.edit}
                     defaultValue={props.curso || ""}
@@ -64,7 +64,7 @@ export function FormDisc(props) {
             {
                 props.edit == false &&
                 <div className="float-right">
-                    <button className="bg-blue-500 p-1 rounded" type="submit">{props.nameButton}</button>
+                    <button className="bg-colorBtnSuccess p-2 rounded text-[#ffffff] font-medium" type="submit">{props.nameButton}</button>
                 </div>
             }
 

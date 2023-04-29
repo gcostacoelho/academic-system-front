@@ -9,7 +9,7 @@ export function AtenderLista(props) {
             <h1 className="m-5 font-bold text-2xl">Atender lista de esperas</h1>
 
             <table className="w-1/2 text-sm text-center text-gray-500 dark:text-gray-400 m-4">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+                <thead className="text-xs text-[#ffffff] uppercase bg-colorHeadTable dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             Ação
@@ -19,7 +19,7 @@ export function AtenderLista(props) {
                         </th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="bg-colorBodyTable">
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <td scope="row" className="flex justify-center items-center">
                             <div className="pt-2.5">

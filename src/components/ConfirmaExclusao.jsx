@@ -9,9 +9,9 @@ export function ConfirmaExclusao(props) {
             </AlertDialog.Trigger>
 
             <AlertDialog.Portal>
-                <AlertDialog.Overlay />
+                <AlertDialog.Overlay className='bg-colorBackgroundModal data-[state=open]:animate-overlayShow fixed inset-0'/>
                 
-                <AlertDialog.Content className='fixed bg-[#6b6b6b] py-8 px-10 text-black top-1/2 left-[800px] -translate-x-1/2 -translate-y-1/2 rounded-lg w-[700px] shadow-lg shadow-black/25'>
+                <AlertDialog.Content className='fixed bg-[#ffffff] py-8 px-10 text-black top-1/2 left-[800px] -translate-x-1/2 -translate-y-1/2 rounded-lg w-[700px] shadow-lg shadow-black/25'>
 
                     <AlertDialog.Title className="m-0 text-[17px] font-semibold">
                         Você tem certeza?
@@ -21,14 +21,14 @@ export function ConfirmaExclusao(props) {
                         Essa ação não pode ser desfeita
                     </AlertDialog.Description>
 
-                    <div className="flex justify-end gap-[25px]">
+                    <div className="flex justify-between mt-5">
                         <AlertDialog.Cancel>
-                            <button>
+                            <button className="bg-colorBtnAlert p-2 rounded text-[#ffffff] font-medium">
                                 Cancelar
                             </button>
                         </AlertDialog.Cancel>
                         <AlertDialog.Action>
-                            <button className="bg-red-500 p-2 rounded text-white">
+                            <button className="bg-colorBtnDanger p-2 rounded text-[#ffffff] font-medium">
                                 Deletar
                             </button>
                         </AlertDialog.Action>

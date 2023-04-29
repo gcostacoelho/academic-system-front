@@ -8,28 +8,28 @@ export default function HomeAluno() {
 
     return (
         <div className="flex">
-            <div className="bg-red-700 p-2 gap-3 flex flex-col h-screen w-1/5 ">
-                <h3 className="text-white text-center">
+            <div className="bg-colorMenus p-2 gap-3 flex flex-col h-screen w-1/5 ">
+                <h3 className="text-[#ffffff] text-center">
                     <b>Sistema de Controle Acadêmico</b>
                 </h3>
 
                 <button
                     onClick={() => setState('start')}
-                    className="bg-slate-500 rounded p-1 text-white hover:bg-slate-700">Home
+                    className="bg-colorBtnMenu  rounded p-1 text-white hover:bg-slate-700">Home
                 </button>
 
                 <button
                     onClick={() => setState('register')}
-                    className="bg-slate-500 rounded p-1 text-white hover:bg-slate-700">Inscrição de aulas
+                    className="bg-colorBtnMenu  rounded p-1 text-white hover:bg-slate-700">Inscrição de aulas
                 </button>
 
                 <button
                     onClick={() => setState('cancela_inscricao')}
-                    className="bg-slate-500 rounded p-1 text-white hover:bg-slate-700">Cancelar inscrição
+                    className="bg-colorBtnMenu  rounded p-1 text-white hover:bg-slate-700">Cancelar inscrição
                 </button>
             </div>
 
-            <div className='container h-screen overflow-hidden'>
+            <div className='container h-screen overflow-hidden bg-colorBackground'>
                 {state == 'start' && <MenuAluno />}
                 {state == 'register' && <FormInscricao />}
                 {state == 'cancela_inscricao' && <FormCancelaInsc />}
