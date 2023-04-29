@@ -57,6 +57,9 @@ export function AndamentoInsc() {
                                                         matricula="BP3018318"
                                                     />
                                                 }
+                                                title={
+                                                    "Visualizar Inscrição"
+                                                }
                                             />
                                         </div>
                                     </td>

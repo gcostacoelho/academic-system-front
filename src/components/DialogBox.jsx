@@ -13,7 +13,9 @@ export function DialogBox(props) {
                 <Dialog.Overlay className='bg-colorBackgroundModal data-[state=open]:animate-overlayShow fixed inset-0' />
 
                 <Dialog.Content className='fixed bg-[#FFFFFF] py-8 px-10 text-black top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[700px] shadow-lg shadow-black/25'>
-                    <Dialog.Title />
+                    <Dialog.Title className="mb-8 text-[19px] font-bold flex justify-center">
+                        {props.title}
+                    </Dialog.Title>
                     {props.content}
                     <Dialog.Close>
                         <button

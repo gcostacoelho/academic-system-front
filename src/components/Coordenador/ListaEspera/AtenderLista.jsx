@@ -34,6 +34,9 @@ export function AtenderLista(props) {
                                             dataCriacao='2023-05-10'
                                         />
                                     }
+                                    title={
+                                        "Criar Turma"
+                                    }
                                 />
                             </div>
                         </td>

@@ -18,6 +18,9 @@ export function VisualizaDiscGeral() {
                             nameButton="Criar"
                         />
                     }
+                    title={
+                        "Cadastrar Disciplina"
+                    }
                 />
             </div>
             <div className="relative overflow-x-auto flex flex-col justify-center items-center">
@@ -53,6 +56,9 @@ export function VisualizaDiscGeral() {
                                                 edit={true}
                                             />
                                         }
+                                        title={
+                                            "Visualizar Disciplina"
+                                        }
                                     />
                                     <DialogBox
                                         trigger={
@@ -63,6 +69,9 @@ export function VisualizaDiscGeral() {
                                                 edit={false}
                                                 nameButton="Atualizar"
                                             />
+                                        }
+                                        title={
+                                            "Atualizar Disciplina"
                                         }
                                     />
                                     <ConfirmaExclusao

@@ -18,6 +18,9 @@ export function VisualizaAlunoGeral() {
                             nameButton="Criar" 
                         />
                     }
+                    title={
+                        "Cadastrar Aluno"
+                    }
                 />
             </div>
             <div className="relative overflow-x-auto flex flex-col justify-center items-center">
@@ -53,6 +56,9 @@ export function VisualizaAlunoGeral() {
                                                 edit={true}
                                             />
                                         }
+                                        title={
+                                            "Visualizar Aluno"
+                                        }
                                     />
                                     <DialogBox
                                         trigger={
@@ -63,6 +69,9 @@ export function VisualizaAlunoGeral() {
                                                 edit={false}
                                                 nameButton="Atualizar"
                                             />
+                                        }
+                                        title={
+                                            "Atualizar Aluno"
                                         }
                                     />
                                     <ConfirmaExclusao
