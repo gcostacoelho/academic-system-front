@@ -37,6 +37,9 @@ export function ContentBoxAndamento(props) {
                         <th scope="col" className="px-6 py-3">
                             Matricula
                         </th>
+                        <th scope="col" className="px-6 py-3">
+                            Disciplina
+                        </th>
                     </tr>
                 </thead>
 
@@ -56,6 +59,10 @@ export function ContentBoxAndamento(props) {
                                     <td scope="row" className="px-6 py-4">
                                         {/* {aluno.matricula} */}
                                         BP3018318
+                                    </td>
+                                    <td scope="row" className="px-6 py-4">
+                                        {/* {aluno.disciplina} */}
+                                        QSW
                                     </td>
                                 </tr>
                             );

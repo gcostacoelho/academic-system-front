@@ -28,6 +28,9 @@ export function AndamentoInsc() {
                             Professor
                         </th>
                         <th scope="col" className="px-6 py-3">
+                            Disciplina
+                        </th>
+                        <th scope="col" className="px-6 py-3">
                             Horário
                         </th>
                         <th scope="col" className="px-6 py-3">
@@ -67,6 +70,11 @@ export function AndamentoInsc() {
                                     <td scope="row" className="px-6 py-4">
                                         {/* data.prof */}
                                         Vendramel
+                                    </td>
+
+                                    <td scope="row" className="px-6 py-4">
+                                        {/* data.disciplina */}
+                                        QSW
                                     </td>
 
                                     <td scope="row" className="px-6 py-4">

@@ -40,16 +40,16 @@ export function FormDisc(props) {
                     defaultValue={props.creditos || ""}
                 />
 
-                <br />
-                <br />
+                {/* <br />
+                <br /> */}
 
-                <label>Curso: </label>
+                {/* <label>Curso: </label>
                 <input
                     className="p-1 rounded border-2"
                     type="text"
                     disabled={props.edit}
                     defaultValue={props.curso || ""}
-                />
+                /> */}
 
                 <br />
                 <br />
