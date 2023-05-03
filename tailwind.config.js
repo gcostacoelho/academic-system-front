@@ -15,6 +15,7 @@ export default {
       colorBtnAlert: "#A5A515",
       colorBtnDanger: "#DF2424",
       colorBtnMenu: "#9ECF92",
+      colorBtnUnselect: "#c9d0d6",
       colorBackgroundInput: "#D1D1D1",
       colorBackgroundModal: "#00000078"
     },
