@@ -1,4 +1,5 @@
 import { PreRequisitos } from "../Coordenador/PreRequisitos";
+import { PreRequisitosEdit } from "../Coordenador/PreRequisitosEdit";
 
 export function FormDisc(props) {
     async function handlePostApi(event) {
@@ -55,19 +56,17 @@ export function FormDisc(props) {
                 <br />
 
                 <label>Pré-requisitos: </label>
-                <PreRequisitos 
-                    edit={props.edit}
-                    check={true}
-                />
-            </div>
+                {
+                    props.edit == false ? <PreRequisitosEdit />  : <PreRequisitos />
+                }
 
+            </div>
             {
                 props.edit == false &&
                 <div className="float-right">
                     <button className="bg-colorBtnSuccess p-2 rounded text-[#ffffff] font-medium" type="submit">{props.nameButton}</button>
                 </div>
             }
-
         </form>
     );
 }

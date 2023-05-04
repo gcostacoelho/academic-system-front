@@ -5,8 +5,6 @@ export function PreRequisitos(props) {
 
                 <thead className="text-xs text-[#ffffff] uppercase bg-colorHeadTable dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" className="">
-                        </th>
                         <th scope="col" className="px-6 py-3">
                             Sigla
                         </th>
@@ -18,14 +16,6 @@ export function PreRequisitos(props) {
 
                 <tbody className="bg-colorBodyTable">
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" className="px-6 py-4 flex justify-center items-baseline">
-                            <input
-                                disabled={props.edit}
-                                defaultChecked={props.check || false}
-                                type="checkbox"
-                                id="selected"
-                            />
-                        </th>
                         <th scope="row" className="px-6 py-4">
                             {/* {props.sigla} */}
                             AOO
