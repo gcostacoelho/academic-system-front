@@ -33,11 +33,11 @@ export function TabelaDisc(props) {
                     <tr className="bg-colorBodyTable border-b dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row" className="px-6 py-4 flex justify-center items-baseline">
                             <input
-                                type="radio"
+                                type="checkbox"
                                 value={props.sigla}
                                 name={props.sigla}
                                 onChange={props.childToParent}
-                                id="radioInput"
+                                id="checkBoxInput"
                             />
                         </th>
                         <th scope="row" className="px-6 py-4">
