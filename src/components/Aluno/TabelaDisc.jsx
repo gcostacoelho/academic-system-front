@@ -15,9 +15,6 @@ export function TabelaDisc(props) {
                             Disciplina
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Turno
-                        </th>
-                        <th scope="col" className="px-6 py-3">
                             Horário
                         </th>
                         <th scope="col" className="px-6 py-3">
@@ -34,8 +31,7 @@ export function TabelaDisc(props) {
                         <th scope="row" className="px-6 py-4 flex justify-center items-baseline">
                             <input
                                 type="checkbox"
-                                value={props.sigla}
-                                name={props.sigla}
+                                value={props.idOferta}
                                 onChange={props.childToParent}
                                 id="checkBoxInput"
                             />
@@ -45,9 +41,6 @@ export function TabelaDisc(props) {
                         </th>
                         <td scope="row" className="px-6 py-4">
                             {props.disc}
-                        </td>
-                        <td scope="row" className="px-6 py-4">
-                            {props.turno}
                         </td>
                         <td scope="row" className="px-6 py-4">
                             {props.horario}

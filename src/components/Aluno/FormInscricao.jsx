@@ -3,7 +3,7 @@ import { TabelaDisc } from "./TabelaDisc";
 import axios from "axios";
 
 export function FormInscricao() {
-    const [disciplinas, setDisciplinas] = useState([]);
+    const [ofertas, setOfertas] = useState([]);
     const [data, setData] = useState();
 
     const childToParent = (childData) => {
@@ -11,42 +11,63 @@ export function FormInscricao() {
     }
 
     useEffect(() => {
-        /*Api aleatória que retorna um array de frases */
-        axios('https://api.breakingbadquotes.xyz/v1/quotes/0').then(resp => {
-            setDisciplinas(resp.data);
+        const body = {
+            "idAluno": 1,
+            "nomeAluno": "Jose Alfonso",
+            "cpf": "51050601709",
+            "protuarioAluno": "BP301845",
+            "dataNasc": "2023-05-01",
+            "cursoMatriculado": {
+                "idCurso": 1,
+                "nomeCurso": "Analise e Desenvolvimento de Sistemas",
+                "siglaCurso": "ADS",
+                "duracaoCurso": 6
+            },
+            "disciplinasConcluidas": [
+                {
+                    "idDisciplina": 1,
+                    "siglaDisc": "GPR",
+                    "nomeDisc": "Gestão de Projetos",
+                    "credito": 4
+                }
+            ]
+        }
+        axios.post('http://127.0.0.1:5000/lista-ofertas', body).then(resp => {
+            setOfertas(resp.data.ofertas);
         })
     }, [])
 
-    function handlePostApi(event) {
+    async function handlePostApi(event) {
         event.preventDefault();
 
-        alert(data);
-        setData();
+        const body = {}
+
+        await axios('https://api.breakingbadquotes.xyz/v1/quotes/2').then(resp => {
+            setData(resp.data[0].quote);
+
+        });
+
+        confirm(data)
+        console.log(data);
     }
 
     return (
         <form onSubmit={handlePostApi} className="m-7 h-screen overflow-auto">
             <div>
                 {
-                    disciplinas.length > 0 && disciplinas.map((disciplina) => {
+                    ofertas.length > 0 && ofertas.map((oferta) => {
+
+                        const turmaInfo = oferta.turma
+
                         return (
                             <div>
                                 <TabelaDisc
-                                    sigla={disciplina.sigla}
-                                    disc={disciplina.disc}
-                                    turno={disciplina.turno}
-                                    horario={disciplina.horario}
-                                    local={disciplina.local}
-                                    prof={disciplina.prof}
-                                    childToParent={childToParent}
-                                />
-                                <TabelaDisc
-                                    sigla="{disciplina.sigla1}"
-                                    disc={disciplina.disc}
-                                    turno={disciplina.turno}
-                                    horario={disciplina.horario}
-                                    local={disciplina.local}
-                                    prof={disciplina.prof}
+                                    idOferta={oferta.idOferta}
+                                    sigla={oferta.codigoOferta}
+                                    disc={oferta.disciplina.nomeDisc}
+                                    horario={`${turmaInfo.horario.diaSemana.toUpperCase()}: ${turmaInfo.horario.horaInicio} - ${turmaInfo.horario.horaFim}`}
+                                    local={turmaInfo.sala.local}
+                                    prof={turmaInfo.professor.nomeProf}
                                     childToParent={childToParent}
                                 />
                                 <div className="flex flex-row justify-center items-center gap-10 my-4">
@@ -60,7 +81,7 @@ export function FormInscricao() {
 
                 {
                     /*Essa condição é especifica por conta da API que está sendo utilizada, dps irá mudar para quando o length for = 0*/
-                    disciplinas[0] == "0" && <h3 className="flex justify-center font-semibold">Não há matérias para ofertar</h3>
+                    ofertas[0] == "0" && <h3 className="flex justify-center font-semibold">Não há matérias para ofertar</h3>
                 }
             </div>
         </form>

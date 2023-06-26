@@ -5,7 +5,7 @@ export function MenuAluno() {
     const [dataAluno, setDataAluno] = useState({})
 
     useEffect(() => {
-        axios('https://api.breakingbadquotes.xyz/v1/quotes/0').then(resp => {
+        axios('http://127.0.0.1:5000').then(resp => {
             setDataAluno(resp.data)
         })
     })
