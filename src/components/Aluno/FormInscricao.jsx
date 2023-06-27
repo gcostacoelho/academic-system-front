@@ -4,35 +4,44 @@ import axios from "axios";
 
 export function FormInscricao() {
     const [ofertas, setOfertas] = useState([]);
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
+    const bodyAluno = {
+        "idAluno": 1,
+        "nomeAluno": "Jose Alfonso",
+        "cpf": "51050601709",
+        "protuarioAluno": "BP301845",
+        "dataNasc": "2023-05-01",
+        "cursoMatriculado": {
+            "idCurso": 1,
+            "nomeCurso": "Analise e Desenvolvimento de Sistemas",
+            "siglaCurso": "ADS",
+            "duracaoCurso": 6
+        },
+        "disciplinasConcluidas": [
+            {
+                "idDisciplina": 1,
+                "siglaDisc": "GPR",
+                "nomeDisc": "Gestão de Projetos",
+                "credito": 4
+            }
+        ]
+    }
 
     const childToParent = (childData) => {
-        setData(childData.target.value);
+        const id = childData.target.value;
+
+        const index = data.indexOf(id);
+        if (index != -1) {
+            data.splice(index, 1);
+
+            setData(data)
+        } else {
+            setData([...data, id])
+        }
     }
 
     useEffect(() => {
-        const body = {
-            "idAluno": 1,
-            "nomeAluno": "Jose Alfonso",
-            "cpf": "51050601709",
-            "protuarioAluno": "BP301845",
-            "dataNasc": "2023-05-01",
-            "cursoMatriculado": {
-                "idCurso": 1,
-                "nomeCurso": "Analise e Desenvolvimento de Sistemas",
-                "siglaCurso": "ADS",
-                "duracaoCurso": 6
-            },
-            "disciplinasConcluidas": [
-                {
-                    "idDisciplina": 1,
-                    "siglaDisc": "GPR",
-                    "nomeDisc": "Gestão de Projetos",
-                    "credito": 4
-                }
-            ]
-        }
-        axios.post('http://127.0.0.1:5000/lista-ofertas', body).then(resp => {
+        axios.post('http://127.0.0.1:5000/lista-ofertas', bodyAluno).then(resp => {
             setOfertas(resp.data.ofertas);
         })
     }, [])
@@ -40,24 +49,68 @@ export function FormInscricao() {
     async function handlePostApi(event) {
         event.preventDefault();
 
-        const body = {}
+        const bodyListaIds = {
+            "listaIds": data
+        }
 
-        await axios('https://api.breakingbadquotes.xyz/v1/quotes/2').then(resp => {
-            setData(resp.data[0].quote);
+        // Req para o endpoint que faz as validações de credito, lista de espera e choque de horario
+        const response = await axios.post('http://127.0.0.1:5000/verifica-requisitos', bodyListaIds).then(resp => {
+            return resp;
+        }).catch(error => {
+            return error.response;
+        })
 
-        });
+        console.log(response.data);
 
-        confirm(data)
-        console.log(data);
+        const respBody = response.data;
+
+        if (response.status == 200) {
+
+            if (respBody.ofertasIndisponiveis.length > 0) {
+
+                respBody.ofertasIndisponiveis.map((lista) => {
+                    if (confirm(`A disciplina ${lista.disciplina.nomeDisc} está cheia!\nDeseja ficar na lista de espera?`)) {
+                        alert("Adicionado a lista");
+                    }
+                });
+            }
+
+            // Confirma inscrição das disciplinas disponíveis
+            if (respBody.ofertasDisponiveis.length > 0) {
+                const body = {
+                    "aluno": bodyAluno,
+                    "listaIds": data
+                }
+
+                const response = await axios.post('http://127.0.0.1:5000/confirma-inscricao', body).then(resp => {
+                    return resp;
+                }).catch(error => {
+                    return error.response;
+                });
+
+                if (response.status == 200) {
+                    return alert("Inscrições realizadas com sucesso");
+                }
+
+            }
+        } else {
+            if (respBody.info == "CHOQUE" || respBody.info == "LIMITE") {
+                alert(respBody.msg);
+    
+                return
+            }
+        }
+
+        return alert("Um erro aconteceu, tente novamente mais tarde");
     }
+
 
     return (
         <form onSubmit={handlePostApi} className="m-7 h-screen overflow-auto">
             <div>
                 {
                     ofertas.length > 0 && ofertas.map((oferta) => {
-
-                        const turmaInfo = oferta.turma
+                        const turmaInfo = oferta.turma;
 
                         return (
                             <div>
@@ -70,18 +123,22 @@ export function FormInscricao() {
                                     prof={turmaInfo.professor.nomeProf}
                                     childToParent={childToParent}
                                 />
-                                <div className="flex flex-row justify-center items-center gap-10 my-4">
-                                    <button className="bg-colorBtnSuccess font-medium p-2 rounded text-[#ffffff]" type="submit">Inscrever</button>
-                                    <button className="bg-colorBtnAlert font-medium p-2 rounded text-[#ffffff]" type="reset">Limpar disciplinas</button>
-                                </div>
+
                             </div>
                         );
                     })
                 }
+                <div className="flex flex-row justify-center items-center gap-10 my-4">
+                    <button
+                        className="bg-colorBtnSuccess font-medium p-2 rounded text-[#ffffff]"
+                        disabled={data.length > 0 ? false : true}
+                        type="submit">Inscrever
+                    </button>
+                    <button className="bg-colorBtnAlert font-medium p-2 rounded text-[#ffffff]" type="reset">Limpar disciplinas</button>
+                </div>
 
                 {
-                    /*Essa condição é especifica por conta da API que está sendo utilizada, dps irá mudar para quando o length for = 0*/
-                    ofertas[0] == "0" && <h3 className="flex justify-center font-semibold">Não há matérias para ofertar</h3>
+                    ofertas.length == 0 && <h3 className="flex justify-center font-semibold">Não há matérias para ofertar</h3>
                 }
             </div>
         </form>
