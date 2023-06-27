@@ -41,9 +41,10 @@ export function FormInscricao() {
     }
 
     useEffect(() => {
-        axios.post('http://127.0.0.1:5000/lista-ofertas', bodyAluno).then(resp => {
-            setOfertas(resp.data.ofertas);
-        })
+        axios.post('http://127.0.0.1:5000/lista-ofertas', bodyAluno)
+            .then(resp => {
+                setOfertas(resp.data.ofertas);
+            })
     }, [])
 
     async function handlePostApi(event) {
@@ -54,13 +55,13 @@ export function FormInscricao() {
         }
 
         // Req para o endpoint que faz as validações de credito, lista de espera e choque de horario
-        const response = await axios.post('http://127.0.0.1:5000/verifica-requisitos', bodyListaIds).then(resp => {
-            return resp;
-        }).catch(error => {
-            return error.response;
-        })
-
-        console.log(response.data);
+        const response = await axios.post('http://127.0.0.1:5000/verifica-requisitos', bodyListaIds)
+            .then(resp => {
+                return resp;
+            })
+            .catch(error => {
+                return error.response;
+            })
 
         const respBody = response.data;
 
@@ -82,28 +83,26 @@ export function FormInscricao() {
                     "listaIds": data
                 }
 
-                const response = await axios.post('http://127.0.0.1:5000/confirma-inscricao', body).then(resp => {
-                    return resp;
-                }).catch(error => {
-                    return error.response;
-                });
+                const response = await axios.post('http://127.0.0.1:5000/confirma-inscricao', body)
+                    .then(resp => {
+                        return resp;
+                    })
+                    .catch(error => {
+                        return error.response;
+                    });
 
                 if (response.status == 200) {
                     return alert("Inscrições realizadas com sucesso");
                 }
-
             }
         } else {
             if (respBody.info == "CHOQUE" || respBody.info == "LIMITE") {
-                alert(respBody.msg);
-    
-                return
+                return alert(respBody.msg);
             }
         }
 
         return alert("Um erro aconteceu, tente novamente mais tarde");
     }
-
 
     return (
         <form onSubmit={handlePostApi} className="m-7 h-screen overflow-auto">
@@ -123,11 +122,15 @@ export function FormInscricao() {
                                     prof={turmaInfo.professor.nomeProf}
                                     childToParent={childToParent}
                                 />
-
                             </div>
                         );
                     })
                 }
+
+                {
+                    ofertas.length == 0 && <h3 className="flex justify-center font-semibold">Não há matérias para ofertar</h3>
+                }
+
                 <div className="flex flex-row justify-center items-center gap-10 my-4">
                     <button
                         className="bg-colorBtnSuccess font-medium p-2 rounded text-[#ffffff]"
@@ -136,10 +139,6 @@ export function FormInscricao() {
                     </button>
                     <button className="bg-colorBtnAlert font-medium p-2 rounded text-[#ffffff]" type="reset">Limpar disciplinas</button>
                 </div>
-
-                {
-                    ofertas.length == 0 && <h3 className="flex justify-center font-semibold">Não há matérias para ofertar</h3>
-                }
             </div>
         </form>
     );
