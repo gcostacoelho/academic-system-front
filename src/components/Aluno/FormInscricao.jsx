@@ -68,10 +68,22 @@ export function FormInscricao() {
         if (response.status == 200) {
 
             if (respBody.ofertasIndisponiveis.length > 0) {
+                respBody.ofertasIndisponiveis.map(async (lista) => {
+                    const body = {
+                        "aluno": bodyAluno,
+                        "idOferta": lista.idOferta
+                    }
 
-                respBody.ofertasIndisponiveis.map((lista) => {
                     if (confirm(`A disciplina ${lista.disciplina.nomeDisc} está cheia!\nDeseja ficar na lista de espera?`)) {
-                        alert("Adicionado a lista");
+                        const resp = axios.post('http://127.0.0.1:5000/adicionar-lista-espera', body)
+                            .then(resp => {
+                                return resp;
+                            })
+                            .catch(error => {
+                                return error.response;
+                            });
+
+                        resp.status == 200 ? alert("Adicionado a lista") : alert(resp.msg);
                     }
                 });
             }
