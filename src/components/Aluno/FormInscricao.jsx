@@ -17,14 +17,7 @@ export function FormInscricao() {
             "siglaCurso": "ADS",
             "duracaoCurso": 6
         },
-        "disciplinasConcluidas": [
-            {
-                "idDisciplina": 1,
-                "siglaDisc": "GPR",
-                "nomeDisc": "Gestão de Projetos",
-                "credito": 4
-            }
-        ]
+        "disciplinasConcluidas": []
     }
 
     const childToParent = (childData) => {
